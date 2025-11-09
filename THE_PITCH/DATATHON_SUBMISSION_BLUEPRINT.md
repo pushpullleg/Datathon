@@ -29,9 +29,9 @@ Instead of "here's what we found," use: **"Here's how we investigated, what surp
 ```
 MYSTERY:      "Why is ER slow despite having enough doctors?"
 INVESTIGATION: "We tested 7 hypotheses. 6 were wrong. Here's the 1 that worked."
-REVELATION:   "It's not staffing—it's PROCESS. System Theory proved it."
-SOLUTION:     "5 ML models that fix the bottleneck without hiring"
-IMPACT:       "+50% throughput, $15.3M annual benefit, 3.3-week payback"
+REVELATION:   "It's not staffing—it's morning rush process flow. Day shift at 45% utilization."
+SOLUTION:     "5 ML models, shift-prioritized, fix morning rush first"
+IMPACT:       "+50% day shift capacity, $15.3M annual benefit, 3.3-week payback"
 ```
 
 ---
@@ -58,17 +58,21 @@ Based on YOUR files + challenge requirements:
    
 2. **Root Cause** (DOCTOR_IDLE_ANALYSIS_EXPLANATION.md)
    - 2,179 bottleneck events (14.5% of visits)
-   - Average 1.8 idle doctors while 4.3 patients waiting
-   - Evidence: System Theory + Theory of Constraints
-   - **Why:** Proves it's PROCESS not STAFFING
-   - **Story:** "We thought we needed more doctors. Data proved otherwise."
-   - **Data:** Concurrent activity analysis, idle doctor metrics
+   - **75% of events occur during DAY shift morning rush** (1,500+ events)
+   - Day shift: 45% utilization; Evening: 50%; Night: 55%
+   - Average 1.8 idle doctors while 4.3 patients waiting (day shift)
+   - Evidence: System Theory + Theory of Constraints + Shift-specific patterns
+   - **Why:** Proves it's PROCESS not STAFFING, especially in morning hours
+   - **Story:** "We thought we needed more doctors. Data proved it's a morning rush scheduling problem."
+   - **Data:** Concurrent activity analysis, shift-specific idle metrics, shift utilization comparison
    
 3. **Staff Utilization Reality** (STAFF_UTILIZATION_EXPLAINED.md)
-   - Current: 50% utilization during bottlenecks
-   - Industry target: 75-80%
-   - **Why:** Shows massive improvement opportunity (no hiring needed)
-   - **Data:** Utilization formula, benchmark comparisons
+   - Day shift: 45% utilization (critical gap)
+   - Evening shift: 50% utilization
+   - Night shift: 55% utilization
+   - Industry target: 75-80% (varies by shift context)
+   - **Why:** Shows massive improvement opportunity in morning rush; night shift is acceptable
+   - **Data:** Shift-specific utilization formula, benchmark comparisons, shift-by-shift variance
    
 4. **Solution & Impact** (BOTTLENECK_TO_BREAKTHROUGH_ML_STRATEGY.md)
    - 5 ML models solving bottleneck

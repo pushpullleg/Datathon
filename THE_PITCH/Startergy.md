@@ -65,4 +65,7 @@ WHICH COSTS MONEY (Business Problem)
 -----
 "cost framing"
 ---------
+Problems of bottleneck.
+Frustration , productivtiy per employee. sends ripples effects
 
+use " downstream " "upstream" 

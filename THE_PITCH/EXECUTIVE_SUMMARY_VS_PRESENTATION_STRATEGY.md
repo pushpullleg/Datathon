@@ -34,12 +34,14 @@
 - Meridian management team (deciding whether to fund)
 
 **What they need to know (in order):**
-1. **What's the problem?** (Cost: $890K lost quarterly)
-2. **Why does it exist?** (Root cause: Process, not staffing)
-3. **What's the fix?** (3-tier solution, 5 ML models)
-4. **What does it cost & earn?** ($550K → $15.3M, 3.3-week payback)
-5. **What are the risks?** (IF wait doesn't improve 10% by Week 4 → pivot)
-6. **What do you need from me?** (Approve $550K, 12-week timeline)
+EXEC SUMMARY should answer:
+✅ What's the problem? (Cost: $890K/quarter loss, concentrated in morning rush)
+✅ Why does it exist? (Process inefficiency, 45% utilization day shift vs 75% target)
+✅ What's the fix? (3 tiers, 5 models, 12 weeks, shift-prioritized: day first)
+✅ What's the ROI? ($550K → $15.3M, primarily from day shift optimization)
+❌ How did you discover it? (NO—that's video only)
+❌ Why did other hypotheses fail? (NO—that's video only)
+❌ Why is night shift at 55% acceptable? (NO—too granular for CFO read)
 
 **What they DON'T want:**
 - How you discovered it
