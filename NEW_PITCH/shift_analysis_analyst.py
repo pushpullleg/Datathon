@@ -97,6 +97,14 @@ def load_data():
         df = pd.read_csv(DATA_FILE)
         print_success(f"Loaded {DATA_FILE} ({len(df):,} records)")
         print(f"  Columns: {', '.join(df.columns.tolist())}")
+        
+        # Add calculated columns for analysis
+        df['arrival_hour'] = pd.to_datetime(df['Arrival Time']).dt.hour
+        df['arrival_timestamp'] = pd.to_datetime(df['Arrival Time'])
+        df['doctors_on_duty'] = df['Doctors On Duty']
+        df['post_triage_wait_time'] = df['WaitTime after Triage'].fillna(0)
+        df['total_wait_time'] = df['TotalTime(Arrival To Exit)'].fillna(0)
+        
         print(f"  Date range: {df['arrival_timestamp'].min()} to {df['arrival_timestamp'].max()}")
         return df
     except FileNotFoundError:
@@ -112,7 +120,7 @@ def validate_data(df):
     print_section("DATA VALIDATION")
     
     # Check for required columns
-    required_cols = ['arrival_timestamp', 'doctors_on_duty', 'post_triage_wait_time']
+    required_cols = ['Arrival Time', 'Doctors On Duty', 'WaitTime after Triage']
     missing = [col for col in required_cols if col not in df.columns]
     
     if missing:
@@ -222,6 +230,10 @@ def analyze_shift_utilization(df):
     
     utilization_data = {}
     
+    # Get unique dates to calculate shift occurrences
+    df['date'] = pd.to_datetime(df['arrival_timestamp']).dt.date
+    num_days = len(df['date'].unique())
+    
     for shift in ['DAY', 'EVENING', 'NIGHT']:
         shift_data = df[df['shift'] == shift]
         
@@ -229,17 +241,20 @@ def analyze_shift_utilization(df):
         doctor_counts = shift_data['doctors_on_duty'].value_counts()
         avg_doctors = shift_data['doctors_on_duty'].mean()
         
-        # Calculate throughput (patients per doctor per hour)
-        shift_hours = 8  # Each shift is 8 hours
+        # Calculate utilization: (patients_per_hour) / (doctors_per_hour_capacity)
+        # Standard ER assumption: 1 doctor can see ~2.5 patients per hour
         total_patients = len(shift_data)
-        total_doctor_hours = avg_doctors * shift_hours * (total_patients / len(df) * 90)  # Approximate
-        throughput = total_patients / total_doctor_hours if total_doctor_hours > 0 else 0
+        shift_hours_total = 8 * num_days  # 8 hours per day for each shift type
         
-        # Utilization = patients waiting / (doctors * capacity)
-        # Approximation: % of time doctors are busy (inverse of idle time)
+        patients_per_hour = total_patients / shift_hours_total
+        doctors_per_hour_capacity = avg_doctors * 2.5  # 2.5 patients/doctor/hour
+        
+        utilization = (patients_per_hour / doctors_per_hour_capacity) * 100 if doctors_per_hour_capacity > 0 else 0
+        
+        # Calculate throughput (patients per doctor per hour)
+        throughput = patients_per_hour / avg_doctors if avg_doctors > 0 else 0
+        
         avg_wait = shift_data['post_triage_wait_time'].mean()
-        max_possible_wait = 480  # 8 hours in minutes
-        utilization = (avg_wait / max_possible_wait) * 100
         
         utilization_data[shift] = {
             'doctors': avg_doctors,
