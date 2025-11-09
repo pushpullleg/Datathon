@@ -8,8 +8,9 @@ Analyze patient flow and operational data to identify the primary causes of dela
 ## 🎯 Solution Delivered
 
 This package contains a comprehensive data-driven analysis that:
-- ✅ Identifies **2,240 flow bottleneck events** where staff availability and patient demand are misaligned
-- ✅ Quantifies **1,423 hours of patient wait time** that can be eliminated through process improvements
+- ✅ Identifies **2,179 flow bottleneck events** where staff availability and patient demand are misaligned
+- ✅ Analysis includes realistic **10-minute transition buffer** for doctors (charting, handwashing, etc.)
+- ✅ Quantifies **1,387 hours of patient wait time** that can be eliminated through process improvements
 - ✅ Proposes **zero-cost operational changes** to improve throughput by 25%
 - ✅ Provides **actionable 8-month implementation roadmap** with clear milestones
 
@@ -24,10 +25,11 @@ This package contains a comprehensive data-driven analysis that:
    - Staff utilization metrics
    - Patient satisfaction impact
 
-2. **`financial_impact.png`** - Performance gap analysis (OPTIONAL - if needed)
-   - Root cause breakdown
-   - Throughput improvement scenarios  
-   - Wait time reduction opportunities
+2. **`root_cause_analysis.png`** - Root cause breakdown and impact analysis
+   - Root cause distribution (Manual assignment, Queue visibility, Handoffs, Process)
+   - Severity analysis
+   - Reduction roadmap
+   - Focus on doctor idle time solutions only
 
 3. **`implementation_roadmap.png`** - 8-month execution plan
    - 4 phases: Quick wins → Workflow → Staffing → Continuous improvement
@@ -42,42 +44,44 @@ This package contains a comprehensive data-driven analysis that:
    - Expected outcomes
    - **Print pages 1-3 for executive distribution**
 
-5. **`PRESENTATION_GUIDE.md`** - How to present findings
-   - 15-minute presentation structure
-   - Talking points and key messages
-   - Objection handling
-   - Audience-specific tactics
-
-6. **`CHEAT_SHEET.md`** - Quick reference card
+5. **`CHEAT_SHEET.md`** ⭐ - Quick reference card
    - Key metrics to memorize
    - Power phrases
    - 60-second opening/closing scripts
+   - Objection handling
    - **Print and keep with you during presentation**
+
+6. **`STAFF_UTILIZATION_EXPLAINED.md`** - Utilization metrics deep dive
+   - How utilization is calculated
+   - Industry benchmarks (75-80% target)
+   - Current state vs target
+   - Why 50% utilization is problematic
 
 7. **`DOCTOR_IDLE_ANALYSIS_EXPLANATION.md`** - Technical methodology
    - First principles explanation of analysis
+   - 10-minute transition buffer rationale
    - Calculation logic
    - Assumptions and limitations
 
-8. **`PACKAGE_INDEX.md`** - Complete package documentation
-
 ### 📊 **Data Exports**
-9. **`top_opportunities.csv`** - 20 worst bottleneck events with specific details
-10. **`shift_performance_summary.csv`** - Performance metrics by shift
-11. **`hourly_pattern.csv`** - Hour-by-hour bottleneck patterns
+8. **`top_opportunities.csv`** - 20 worst bottleneck events with specific details
+9. **`shift_performance_summary.csv`** - Performance metrics by shift
+10. **`hourly_pattern.csv`** - Hour-by-hour bottleneck patterns
 
 ### 🔧 **Technical Assets**
-12. **`doctor_idle_analysis.py`** - Python analysis script (reproducible)
+11. **`doctor_idle_analysis.py`** - Python analysis script (reproducible, includes 10-min buffer)
+12. **`executive_presentation.py`** - Visualization generator script
 
 ---
 
 ## 📊 **Key Findings Summary**
 
 ### The Problem
-- **2,240 flow bottleneck events** (15% of all ER visits)
-- **38.1 minutes** average delay during bottlenecks
-- **Staff utilization: 50-60%** (target: 75-80%)
-- **Evening shift** most affected (880 incidents)
+- **2,179 flow bottleneck events** (14.5% of all ER visits)
+- **Even with 10-minute buffer** for doctor transitions (realistic assumption)
+- **38.2 minutes** average delay during bottlenecks
+- **Staff utilization: ~50%** (target: 75-80%)
+- **1,387 wasted patient-hours** in Q1 2025
 
 ### Root Causes
 1. **Manual patient-doctor assignment** (40% of delays)
@@ -87,9 +91,10 @@ This package contains a comprehensive data-driven analysis that:
 
 ### The Opportunity
 - **+25% throughput** improvement potential
-- **+1,423 patients/quarter** with same staff
+- **+1,387 patients/quarter** with same staff
 - **60% reduction** in post-triage wait times
 - **Zero additional staffing** required
+- **Analysis validated** with realistic 10-minute transition buffer
 
 ---
 
@@ -100,13 +105,13 @@ If you need to present this TODAY:
 1. **Read:** `EXECUTIVE_SUMMARY.txt` (pages 1-2) - 5 minutes
 2. **Review:** `executive_dashboard.png` - 3 minutes  
 3. **Memorize:** These 4 numbers - 2 minutes
-   - 2,240 bottleneck events
-   - 38 minutes average delay
-   - 50-60% current utilization
+   - 2,179 bottleneck events (with 10-min buffer)
+   - 38.2 minutes average delay
+   - ~50% current utilization (target: 75-80%)
    - +25% throughput potential
 
 **Your opening:**
-> "Our analysis of 15,000 ER visits revealed 2,240 flow bottleneck events where staff were available but patients waited in queue. These bottlenecks cause 38-minute delays on average and reduce our throughput by 25%. The good news: this is fixable through process improvements - no additional staffing needed."
+> "Our analysis of 15,000 ER visits revealed 2,179 flow bottleneck events where staff were available but patients waited in queue—even accounting for 10 minutes of transition time between patients. These bottlenecks cause 38-minute delays on average and reduce our throughput by 25%. The good news: this is fixable through process improvements focused on doctor assignment and queue visibility—no additional staffing needed."
 
 ---
 
@@ -150,26 +155,26 @@ If you need to present this TODAY:
 ## 🚀 **Implementation Approach**
 
 ### Phase 1: Quick Wins (Month 1)
-- Real-time queue visibility dashboard
-- Standardized shift handoff protocol
-- Utilization tracking
+- Real-time queue visibility dashboard (so doctors see waiting patients)
+- Standardized shift handoff protocol (reduce transition delays)
+- Doctor utilization tracking (measure idle time in real-time)
 
 **Expected Impact:** 30-40% improvement
 
 ### Phase 2: Workflow Optimization (Months 2-3)
-- Automated patient-doctor assignment
-- Streamlined triage-to-doctor process
-- Optimized fast-track protocols
+- Automated patient-doctor assignment (fix 40% manual delay)
+- Real-time queue alerts (notify doctors of waiting patients)
+- Handoff workflow optimization (streamline shift transitions)
 
 **Expected Impact:** Additional 20-30% improvement
 
-### Phase 3: Staffing Optimization (Months 4-5)
-- Predictive staffing model
-- Dynamic resource allocation
+### Phase 3: Advanced Systems (Months 4-5)
+- Predictive assignment algorithm (intelligently assign next patient)
+- Cross-shift coordination tools (improve communication)
 
 ### Phase 4: Continuous Improvement (Months 6-8)
-- Real-time performance monitoring
-- Staff training
+- Real-time bottleneck monitoring
+- Staff training on new workflows
 - Ongoing refinement
 
 ---
@@ -226,8 +231,9 @@ If you need to present this TODAY:
 
 ### "How do we know this will work?"
 - Analysis based on 15,000 actual patient visits
-- Root causes clearly identified in data
-- Solutions based on proven best practices
+- Includes realistic 10-minute buffer for doctor transitions
+- Root causes clearly identified: manual assignment (40%) and lack of queue visibility (30%)
+- Solutions focus specifically on these bottlenecks
 - Phased approach allows validation at each step
 
 ### "Why haven't we seen this before?"
@@ -263,19 +269,19 @@ Doctor_Idle_Time/
 ├── README.md                                  📍 You are here
 ├── EXECUTIVE_SUMMARY.txt                      ⭐ Main report
 ├── CHEAT_SHEET.md                             ⭐ Quick reference
-├── PRESENTATION_GUIDE.md                      📖 How to present
+├── STAFF_UTILIZATION_EXPLAINED.md             📖 Utilization guide
 ├── DOCTOR_IDLE_ANALYSIS_EXPLANATION.md        📖 Methodology
-├── PACKAGE_INDEX.md                           📖 Complete index
 │
 ├── executive_dashboard.png                    📊 Main visual
-├── financial_impact.png                       📊 Optional visual
+├── root_cause_analysis.png                    📊 Root causes
 ├── implementation_roadmap.png                 📊 Action plan
 │
 ├── top_opportunities.csv                      📈 Detail data
 ├── shift_performance_summary.csv              📈 Shift metrics
 ├── hourly_pattern.csv                         📈 Time patterns
 │
-└── doctor_idle_analysis.py                    🔧 Analysis code
+├── doctor_idle_analysis.py                    🔧 Analysis code
+└── executive_presentation.py                  🔧 Visualization code
 ```
 
 ---
