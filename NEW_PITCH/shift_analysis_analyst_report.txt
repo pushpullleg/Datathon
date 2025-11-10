@@ -15,15 +15,15 @@ KEY FINDINGS:
    - 1,393 bottleneck events during peak hours
    - Average wait: 36.5 min
 
-2. Pre-Morning Rush (5-7 AM): 5.9% of all events
-   - 225 bottleneck events during transition
+2. Early Morning (5-7 AM): 5.9% of all bottleneck events
+   - 225 bottleneck events during transition period
    - Average wait: 36.0 min
-   - Night shift tail (2 doctors + early morning arrivals)
+   - Night shift tail (1.5-2 doctors + early morning arrivals)
 
-3. Combined Early Morning (5 AM-12 PM): 42.4% of all events
-   - This 7-hour window concentrates the core problem
-- Day shift operates at only 154% utilization
-- Target utilization: 75% (gap: -79 points)
+3. Combined Early Morning Period (5 AM-12 PM): 42.4% of all bottleneck events
+   - This 7-hour window concentrates 42% of all system stress
+   - Early morning (5-7 AM): 225 events (transition/handoff)
+   - Morning rush (7 AM-12 PM): 1,393 events (peak congestion)
 
 DETAILED SHIFT BREAKDOWN
 --------------------------------------------------------------------------------
@@ -52,38 +52,48 @@ NIGHT SHIFT
   Bottleneck events: 412 (10.8% of total)
   Throughput: 1.99 pph
 
-MORNING RUSH DEEP DIVE (7 AM - 12 PM)
+EARLY MORNING (5-7 AM) - TRANSITION PERIOD
 --------------------------------------------------------------------------------
-Morning rush visits: 6,779
-Morning rush bottleneck events: 1,393
-Average wait during morning rush: 36.5 min
-Peak congestion: Highest utilization period
+Visits: 1,219
+Bottleneck events: 225
+Bottleneck rate: 18.5% (within period)
+Average wait: 36.0 min
+Peak hour: 6:00 AM
+Context: End of night shift (1.5-2 doctors) + early patient arrivals
+Significance: Transition bottleneck before day shift handoff
 
-PRE-MORNING RUSH DEEP DIVE (5 AM - 7 AM)
+MORNING RUSH (7 AM - 12 PM) - PEAK PERIOD
 --------------------------------------------------------------------------------
-Pre-morning visits: 1,219
-Pre-morning bottleneck events: 225
-Average wait during pre-morning: 36.0 min
-Context: End of night shift (2 doctors) + early arrivals
-Significance: Transition period before day shift begins
+Visits: 6,779
+Bottleneck events: 1,393
+Bottleneck rate: 20.5% (within period)
+Average wait: 36.5 min
+Peak hour: 8:00 AM
+Context: Day shift operational (3.5-4 doctors) at highest load
+Significance: Core bottleneck period - main constraint point
 
 COMBINED EARLY MORNING ANALYSIS (5 AM - 12 PM)
 --------------------------------------------------------------------------------
-Total early morning visits: 7,998
-Total early morning bottlenecks: 1,618 (42.4% of all events)
-Strategic insight: This 7-hour window is the critical constraint
-Staffing challenge: Transition from 2 doctors (night) → 4 doctors (day)
+Total visits: 7,998
+Total bottleneck events: 1,618
+Total bottleneck % of day shift: 66.7%
+Total bottleneck % of all events: 42.4%
+Strategic insight: This 7-hour window concentrates 42% of ALL system bottlenecks
+Key finding: Two distinct problems (transition + peak) in same window
 
 KEY POINTS FOR VIDEO SCRIPT
 --------------------------------------------------------------------------------
-✓ "Seventy-five percent of 3,812 bottleneck events occurred during day shift"
-✓ "Day shift operates at 154% utilization (only 4 doctors)"
-✓ "Evening: 47%, Night: 80%"
-✓ "Morning rush (7 AM-12 PM) is the critical constraint"
-✓ "Pre-morning transition (5-7 AM) adds 225 additional bottleneck events"
-✓ "Combined early morning (5 AM-12 PM) concentrates 42% of all inefficiency"
+✓ "Day shift operates at 154% utilization (overloaded with only 3.5 doctors)"
+✓ "Evening: 47% (ideal), Night: 80% (acceptable)"
+✓ "64% of all bottleneck events concentrated in day shift"
+✓ "Early morning period (5 AM-12 PM) accounts for 42.4% of all bottlenecks"
+✓ "Early morning transition (5-7 AM): 225 events = 5.9% of bottlenecks"
+✓ "Morning rush peak (7 AM-12 PM): 1,393 events = 36.5% of bottlenecks"
+✓ "Two distinct problems in early morning window:"
+  - "5-7 AM: Transition period with minimal night shift staff"
+  - "7 AM-12 PM: Peak patient arrival with insufficient day shift doctors"
 ✓ "Average wait time: Day 38m, Evening 42m, Night 36m"
-✓ "Critical insight: Staffing transition (2→4 doctors) at 5-7 AM creates early bottleneck"
+✓ "Critical insight: Staffing transition (1.5 night doctors → 3.5 day doctors)"
 
 STRATEGIC RECOMMENDATIONS
 --------------------------------------------------------------------------------

@@ -245,7 +245,9 @@ The calculation shows:
 This is why you're seeing:
 - **3,812 bottleneck events** across the 3 months
 - **64% concentrated in day shift** (when the system is most stressed)
-- **67% happen in early morning 5 AM-12 PM** (transition + peak combined)
+- **Early morning (5-7 AM) alone:** 225 events = **5.9%** of total bottlenecks
+- **Morning rush (7 AM-12 PM):** 1,393 events = **36.5%** of total bottlenecks
+- **Combined (5 AM-12 PM):** 1,618 events = **42.4%** of all bottlenecks
 
 ---
 

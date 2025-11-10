@@ -69,3 +69,10 @@ Problems of bottleneck.
 Frustration , productivtiy per employee. sends ripples effects
 
 use " downstream " "upstream" 
+
+-------
+
+Our analysis reveals the hospital isn't just busy—the day shift is operating at 154% capacity. To put this in perspective, that's like asking 3.5 people to do the work of 5.4 people simultaneously. The bottlenecks aren't random—they're a predictable consequence of structural understaffing. Evening shift at 47% shows the staffing model CAN work; we just need to rebalance resources to the day shift.
+
+-----
+
